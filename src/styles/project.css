@@ -1,0 +1,435 @@
+/* Removing Scroll bar */
+html {
+
+    width:100%;
+    height:100%;
+   -webkit-font-smoothing: antialiased;
+    /* overflow: hidden; */
+    position: fixed;
+    touch-action: manipulation;
+
+
+}
+
+.Cover-Screen{
+  pointer-events: none;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover{
+    color: inherit;
+    text-decoration: none;
+    background-color: transparent;
+}
+/* Navigation styles */
+.navList{
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #000;
+    opacity: 0;
+    visibility: visible;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items:center;
+    transition: all .3s ease-in-out 0s;
+
+}
+.Active-Nav-List{
+    z-index: 90;
+    opacity: 1;
+}
+.List-Container{
+    display: flex;
+    flex-direction: column;
+    color:#fff;
+    letter-spacing: -0.04em;
+    font-size: 30px;
+    font-weight: 700;
+    width: 80%;
+    align-items: center;
+    z-index: 100;
+}
+.nav-list-item{
+    margin-bottom: 15px;
+    margin-top:15px ;
+    opacity: 0;
+    transition: all .2s ease-in-out 0s;
+
+}
+.nav-list-item:hover{
+   transform:scale(1.05,1.05);
+    opacity: 0.6;
+    transition: all .2s ease-in-out 0s;
+
+}
+.Active-list-item{
+    opacity: 1;
+}
+.Divider{
+    background-color: rgb(255, 255, 255);
+    height: 1px;
+    width: 0px;
+    max-width: 454px;
+        transition: all .3s ease-in-out 0s;
+
+}
+.Active-D{
+width: 80%;
+}
+.navLines{
+    z-index: 100;
+    position: fixed;
+    width: 20%;
+    max-width: 31px;
+    cursor: pointer;
+    top: 7%;
+    pointer-events:auto ;
+    right: 3.5%;
+}
+.Wrapper-Line{
+    background-color: rgb(255, 255, 255);
+    height: 3.5px;
+    width: 100%;
+    margin-bottom: 4px;
+    transition: all .3s ease-in-out 0s;
+
+
+}
+.Line-Effect:hover .Line-1{
+   animation: Line-Eff .4s;
+
+
+}
+.Line-Effect:hover .Line-2{
+    animation: Line-Eff .35s;
+    animation-delay: .15s;
+
+
+ }
+ .Line-Effect:hover .Line-4{
+    animation: Line-Eff .35s;
+    animation-delay: .15s;
+
+
+ }
+ .Line-Effect:hover .Line-3{
+    animation: Line-Eff .3s;
+    animation-delay: .3s;
+
+
+ }
+ .Active-Lines .Line-1{
+ width: 0px;
+
+
+ }
+
+  .Active-Lines .Line-3{
+     width: 0px;
+  }
+
+/* Logo Style */
+.Logo{
+    z-index: 100;
+    position: fixed;
+    pointer-events: auto;
+    cursor: pointer;
+    width: 35%;
+    max-width: 70px;
+    top: 7%;
+    left: 4%;
+}
+.Arrow{
+    z-index: 32;
+    position: fixed;
+    pointer-events: auto;
+    cursor: pointer;
+
+    color: #fff;
+    top: 85vh;
+    margin-left: -25px;
+    font-size: 60px;
+    left: 50vw;
+
+}
+/* Public Styles */
+.fullHeight{
+    height: 100vh!important;
+}
+.halfHeight{
+    height: 50vh!important;
+}
+.topLeft{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.topRight{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.bottomRight{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.bottomLeft{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.ScreenImge{
+    width: 100%;
+    object-fit: cover;
+}
+.newposition{
+    position: relative;
+}
+/* OverLay */
+.Overlay{
+    position: absolute;
+background-color: #fff;
+cursor: pointer;
+height: inherit;
+opacity: 0;
+transition: all 0.3s ease-in-out 0s;
+mix-blend-mode:screen;
+}
+.Overlay:hover{
+opacity: 0.6;
+transition: all 0.3s ease-in-out 0s;
+
+}
+.Overlay:hover .Overlay-Add{
+    transform: rotate(90deg);
+    transition: all 0.3s cubic-bezier(1,0,.61,.98) 0s;
+
+    }
+
+.Overlay-Add{
+    width: 50%;
+    max-width: 45px;
+    transition: all 0.3s cubic-bezier(1,0,.61,.98) 0s;
+
+}
+/* Styling Screen 1 (Cover) headings */
+.Cover-Screen .caption-header{
+      letter-spacing:-0.04em;
+      font-weight: 700;
+
+}
+.Cover-Screen .caption{
+    letter-spacing:-0.02em;
+    margin-top: -1vh;
+
+}
+/* Styling Cover Screen Caption*/
+.Cover-Screen .carousel-caption-container{
+    position:absolute;
+    right: 0px;
+    left: 0px;
+    bottom: 20vh;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    z-index: 0;
+    max-height: 176px!important;
+ }
+ /* Adding Effects to Caption */
+.Cover-Screen .carousel-caption-container:hover{
+opacity: 0.8;
+transform:scale(1.02);
+transition: all 0.3s ease-in-out 0s;
+}
+/* Styling Screen 1 (Cover) Images */
+.Cover-Photos{
+    object-fit: cover;
+    height: 100vh;
+    transition: all 1.5s ease-in-out 0s;
+
+}
+/* Adjusting Screen 2 Position  */
+
+.Screen-2{
+    z-index: 21;
+}
+.Screen-3{
+    z-index: 19;
+}
+.Screen-4{
+    z-index: 18;
+}
+.Screen-6{
+    z-index: 22;
+}
+.Screen-10{
+    z-index: 27;
+}
+.Screen-11{
+    z-index: 25;
+}
+.Screen-13{
+    z-index: 30;
+}
+
+/* Styling Screen 2 text  */
+.Screen-text-container{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: min(3.5vw, 39px);
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+    line-height: 1.25;
+    font-weight: bold;
+    font-family: GothamHTF;
+    width: 100%;
+    transform: matrix3d(0.75, 0.0001309, 0, 0, -0.0001309, 0.75, 0, 0, 0, 0, 1, 0, 0, 177, 0, 1);
+    transition: all 0.7s cubic-bezier(0,1.02,.67,.98) 0s;
+
+
+}
+.Screen-text{
+    transform: matrix3d(1, 0.000174533, 0, 0, -0.000174533, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    transition: all 0.7s cubic-bezier(0,1.02,.67,.98) 0s;
+
+}
+.Screen-2-bgColor{
+    background-color: rgb(54, 46, 47);
+}
+.Screen-3-bgColor{
+    background-color: rgb(124, 183, 191);
+}
+.Screen-4-bgColor{
+    background-color: rgb(127, 156, 177)
+}
+.Screen-5-bgColor{
+    background-color: rgb(18, 18, 18)
+}
+.Screen-6-bgColor{
+    background-color: rgb(51, 81, 161)
+}
+.Screen-7-bgColor{
+    background-color: rgb(221, 91, 86)
+}
+.Screen-8-bgColor{
+    background-color: rgb(4, 3, 3)
+}
+.Screen-9-bgColor{
+    background-color: rgb(242, 155, 57)
+}
+.Screen-10-bgColor{
+    background-color: rgb(47, 54, 66)
+}
+.Screen-11-bgColor{
+    background-color: rgb(235, 93, 45)
+}
+.Screen-12-bgColor{
+    background-color: rgb(70, 71, 64)
+}
+.Screen-13-bgColor{
+    background-color: rgb(16, 16, 16)
+}
+.OutLeft{
+    transform: translate(-100%, 0%) translate3d(0px, 0px, 0px);
+    transition: all 0.7s cubic-bezier(1,0,.61,.98) 0s;
+
+}
+.OutRight{
+    transform: translate(100%, 0%) translate3d(0px, 0px, 0px);
+    transition: all 0.7s cubic-bezier(1,0,.61,.98) 0s;
+
+}
+.OutTop{
+    transform: translate(0%, -100%) translate3d(0px, 0px, 0px);
+    transition: all 0.7s cubic-bezier(1,0,.61,.98) 0s;
+
+}
+.OutDown{
+    transform: translate(0%, 100%) translate3d(0px, 0px, 0px);
+    transition: all 0.7s cubic-bezier(1,0,.61,.98) 0s;
+
+}
+.MoveIn{
+
+    transform: translate(0%, 0%) translate3d(0px, 0px, 0px);
+    transition: all 0.7s cubic-bezier(1,0,.61,.98) 0s;
+}
+.MoveLeft{
+    transform: translate(-100%, 0%) translate3d(0px, 0px, 0px);
+    transition: all 0.7s cubic-bezier(1,0,.61,.98) 0s;
+}
+.Move-2-Left{
+    transform: translate(-200%, 0%) translate3d(0px, 0px, 0px);
+    transition: all 0.7s cubic-bezier(1,0,.61,.98) 0s;
+}
+.MoveRight{
+    transform: translate(100%, 0%) translate3d(0px, 0px, 0px);
+    transition: all 0.7s cubic-bezier(1,0,.61,.98) 0s;
+}
+.MoveUp{
+    transform: translate(0%, -100%) translate3d(0px, 0px, 0px);
+    transition: all 0.7s cubic-bezier(1,0,.61,.98) 0s;
+}
+.MoveDown{
+    transform: translate(0%, 100%) translate3d(0px, 0px, 0px);
+    transition: all 0.7s cubic-bezier(1,0,.61,.98) 0s;
+}
+/* @keyframes MoveForward {
+    0% {
+        transform: translate(-100%, 0%) translate3d(0px, 0px, 0px);
+    }
+
+
+    100% {
+        transform: translate(0%, 0%) translate3d(0px, 0px, 0px);
+    }
+}
+@keyframes MoveBackWard {
+    0% {
+        transform: translate(0%, 0%) translate3d(0px, 0px, 0px);
+    }
+
+
+    100% {
+        transform: translate(-100%, 0%) translate3d(0px, 0px, 0px);
+    }
+} */
+@keyframes Line-Eff {
+    0% {
+        width: 100%;
+    }
+    50% {
+        width: 80%;
+    }
+
+    100% {
+        width: 100%;
+        }
+}
+@media (min-width: 576px) {
+
+ }
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+ }
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+ }
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
